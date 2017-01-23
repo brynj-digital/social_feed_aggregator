@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sfa_link
+    - node.type.sfa_social_post
+  module:
+    - link
+id: node.sfa_social_post.field_sfa_link
+field_name: field_sfa_link
+entity_type: node
+bundle: sfa_social_post
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

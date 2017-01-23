@@ -1,0 +1,19 @@
+cron:
+  interval: 3600
+facebook:
+  enabled: false
+  username: ''
+  app_id: ''
+  app_secret: ''
+twitter:
+  enabled: false
+  username: ''
+  consumer_key: ''
+  consumer_secret: ''
+  access_token: ''
+  access_token_secret: ''
+instagram:
+  enabled: false
+  username: ''
+  client_id: ''
+  client_secret: ''

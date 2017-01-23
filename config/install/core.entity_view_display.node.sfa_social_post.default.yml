@@ -1,0 +1,74 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sfa_social_post.field_sfa_id
+    - field.field.node.sfa_social_post.field_sfa_image
+    - field.field.node.sfa_social_post.field_sfa_link
+    - field.field.node.sfa_social_post.field_sfa_platform
+    - field.field.node.sfa_social_post.field_sfa_post
+    - field.field.node.sfa_social_post.field_sfa_posted
+    - node.type.sfa_social_post
+  module:
+    - datetime
+    - link
+    - text
+    - user
+id: node.sfa_social_post.default
+targetEntityType: node
+bundle: sfa_social_post
+mode: default
+content:
+  field_sfa_id:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_sfa_image:
+    weight: 104
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_sfa_link:
+    weight: 103
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_sfa_platform:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_sfa_post:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_sfa_posted:
+    weight: 102
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+  links:
+    weight: 100
+hidden: {  }

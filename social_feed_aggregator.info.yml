@@ -1,0 +1,7 @@
+name: 'Social Feed Aggregator'
+type: module
+description: 'Pulls social feeds from Facebook, Twitter, Pinterest and Instagram, and aggregates them into a content type.'
+package: Other
+core: 8.x
+dependencies:
+  - drupal:node

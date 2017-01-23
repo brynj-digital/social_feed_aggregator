@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - social_feed_aggregator
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Social Post'
+type: sfa_social_post
+description: 'This content type is provided by the Social Feed Aggregator module.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

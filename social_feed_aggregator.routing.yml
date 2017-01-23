@@ -1,0 +1,7 @@
+social_feed_aggregator.settings:
+  path: '/admin/structure/social_feed_aggregator_settings'
+  defaults:
+    _form: '\Drupal\social_feed_aggregator\Form\SocialPostSettingsForm'
+    _title: 'Social Feed Aggregator Settings'
+  requirements:
+    _permission: 'administer socialpost entity'

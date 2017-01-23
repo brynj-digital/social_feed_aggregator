@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sfa_posted
+    - node.type.sfa_social_post
+  module:
+    - datetime
+id: node.sfa_social_post.field_sfa_posted
+field_name: field_sfa_posted
+entity_type: node
+bundle: sfa_social_post
+label: Posted
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

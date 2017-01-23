@@ -1,0 +1,27 @@
+{
+  "name": "brynj-digital/social_feed_aggregator",
+  "type": "drupal-module",
+  "description": "Allows Facebook, Twitter and Instagram posts to be pulled into a Social Post Drupal content type, on a scheduled basis.",
+  "keywords": [
+    "drupal",
+    "drupal 8",
+    "social",
+    "facebook",
+    "twitter",
+    "instagram"
+  ],
+  "homepage": "https://github.com/brynj-digital/social_feed_aggregator",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Bryn Jones",
+      "email": "bryn.jones@reckless.agency",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "brynj-digital/social-feed": "dev-master"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sfa_platform
+    - node.type.sfa_social_post
+id: node.sfa_social_post.field_sfa_platform
+field_name: field_sfa_platform
+entity_type: node
+bundle: sfa_social_post
+label: Platform
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

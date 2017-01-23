@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sfa_social_post.field_sfa_image
+    - field.field.node.sfa_social_post.field_sfa_link
+    - field.field.node.sfa_social_post.field_sfa_platform
+    - field.field.node.sfa_social_post.field_sfa_post
+    - field.field.node.sfa_social_post.field_sfa_posted
+    - node.type.sfa_social_post
+  module:
+    - user
+id: node.sfa_social_post.teaser
+targetEntityType: node
+bundle: sfa_social_post
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_sfa_image: true
+  field_sfa_link: true
+  field_sfa_platform: true
+  field_sfa_post: true
+  field_sfa_posted: true
