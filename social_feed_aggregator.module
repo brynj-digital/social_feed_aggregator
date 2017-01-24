@@ -87,6 +87,9 @@ function social_feed_aggregator_cron() {
   }
 }
 
+/*
+ * Ensure all post text links are hyperlinks
+ */
 function social_feed_aggregator_linkify($text)
 {
   $rexProtocol = '(https?://)?';
@@ -107,7 +110,9 @@ function social_feed_aggregator_linkify($text)
   return $text;
 }
 
-
+/*
+ * Create the Social Post node, if it does not exist
+ */
 function social_feed_aggregator_create_node($item)
 {
   $query = \Drupal::entityQuery('node')

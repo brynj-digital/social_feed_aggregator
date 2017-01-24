@@ -6,7 +6,6 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\CronInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Queue\QueueFactory;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\State\StateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -31,13 +30,6 @@ class SocialPostSettingsForm extends ConfigFormBase {
   protected $cron;
 
   /**
-   * The queue object.
-   *
-   * @var \Drupal\Core\Queue\QueueFactory
-   */
-  protected $queue;
-
-  /**
    * The state keyvalue collection.
    *
    * @var \Drupal\Core\State\StateInterface
@@ -47,11 +39,10 @@ class SocialPostSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function __construct(ConfigFactoryInterface $config_factory, AccountInterface $current_user, CronInterface $cron, QueueFactory $queue, StateInterface $state) {
+  public function __construct(ConfigFactoryInterface $config_factory, AccountInterface $current_user, CronInterface $cron, StateInterface $state) {
     parent::__construct($config_factory);
     $this->currentUser = $current_user;
     $this->cron = $cron;
-    $this->queue = $queue;
     $this->state = $state;
 
   }
@@ -64,7 +55,6 @@ class SocialPostSettingsForm extends ConfigFormBase {
       $container->get('config.factory'),
       $container->get('current_user'),
       $container->get('cron'),
-      $container->get('queue'),
       $container->get('state')
     );
   }
@@ -82,11 +72,11 @@ class SocialPostSettingsForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('social_feed_aggregator.settings');
 
-    $next_execution = \Drupal::state()->get('social_feed_aggregator.next_execution');
+    $next_execution = $this->state->get('social_feed_aggregator.next_execution');
     $next_execution = !empty($next_execution) ? $next_execution : REQUEST_TIME;
 
     $args = [
-      '%time' => date_iso8601(\Drupal::state()->get('social_feed_aggregator.next_execution')),
+      '%time' => date_iso8601($this->state->get('social_feed_aggregator.next_execution')),
       '%seconds' => $next_execution - REQUEST_TIME,
     ];
     $form['status']['last'] = [
