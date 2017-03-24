@@ -127,7 +127,7 @@ function social_feed_aggregator_create_node($item)
       'title'               => ucwords($item->service).' Post ID: '.$item->id,
       'field_sfa_platform'  => ucwords($item->service),
       'field_sfa_id'        => $item->id,
-      'field_sfa_post'      => ['value' => social_feed_aggregator_linkify($item->text), 'format' => 'basic_html'],
+      'field_sfa_post'      => ['value' => social_feed_aggregator_linkify(html_entity_decode($item->text)), 'format' => 'basic_html'],
       'field_sfa_link'      => $item->link,
       'field_sfa_image'     => !empty($item->media->image) ? $item->media->image : '',
       'field_sfa_posted'    => date("Y-m-d\TH:i:s", $item->created)
