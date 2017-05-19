@@ -58,7 +58,7 @@ function social_feed_aggregator_cron() {
     if($config->get('instagram.enabled')==true) {
       $feed->instagram->setCredentials([
         'client_id' => $config->get('instagram.client_id'),
-        'client_secret' => $config->get('instagram.client_secret'),
+        'access_token' => $config->get('instagram.access_token'),
       ]);
 
       // Get all recent posts instagram user

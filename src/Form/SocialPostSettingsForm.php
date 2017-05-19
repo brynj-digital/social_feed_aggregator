@@ -190,10 +190,10 @@ class SocialPostSettingsForm extends ConfigFormBase {
       '#required' => $config->get('instagram.enabled') ? true : false,
     );
 
-    $form['instagram']['instagram_client_secret'] = array(
+    $form['instagram']['instagram_access_token'] = array(
       '#type' => 'textfield',
-      '#title' => $this->t('Client Secret'),
-      '#default_value' => $config->get('instagram.client_secret'),
+      '#title' => $this->t('Access Token'),
+      '#default_value' => $config->get('instagram.access_token'),
       '#required' => $config->get('instagram.enabled') ? true : false,
     );
 
@@ -258,7 +258,7 @@ class SocialPostSettingsForm extends ConfigFormBase {
 
     // check user has provided all instagram details
     if(!empty($values['instagram_enabled'])) {
-      if(empty($values['instagram_username']) || empty($values['instagram_client_id']) || empty($values['instagram_client_secret']))
+      if(empty($values['instagram_username']) || empty($values['instagram_client_id']) || empty($values['instagram_access_token']))
       $form_state->setErrorByName('instagram_enabled', $this->t('Please provide all Instagram details.'));
     }
 
@@ -300,7 +300,7 @@ class SocialPostSettingsForm extends ConfigFormBase {
       ->set('instagram.enabled', $form_state->getValue('instagram_enabled'))
       ->set('instagram.username', $form_state->getValue('instagram_username'))
       ->set('instagram.client_id', $form_state->getValue('instagram_client_id'))
-      ->set('instagram.client_secret', $form_state->getValue('instagram_client_secret'))
+      ->set('instagram.access_token', $form_state->getValue('instagram_access_token'))
       ->save();
 
     parent::submitForm($form, $form_state);
